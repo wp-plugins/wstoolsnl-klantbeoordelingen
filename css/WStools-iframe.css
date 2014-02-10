@@ -1,0 +1,10 @@
+body { background-color:#FFF !important; }
+#beoordelenin h1 { font-size:16px !important; } 
+#beoordelenin .row { width:100%; margin-bottom:20px; }
+#beoordelenin .row .links { width:200px !important; float:left !important; }
+#beoordelenin .sterren .links { padding-top:10px; }
+#beoordelenin .row .vraag { width:calc(100% - 200px); float:right !important; }
+#beoordelenin input { width:100%; padding:6px; }
+#beoordelenin select { width:100%; padding:6px; }
+#beoordelenin textarea { width:100%; padding:6px; height:100px; }
+#beoordelenin input[type=submit] { background-color:#217dc0; border:1px #217dc0 solid; color:#FFF; float:right; cursor:pointer; padding:5px 20px; }

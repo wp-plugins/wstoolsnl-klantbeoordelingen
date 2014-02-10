@@ -1,0 +1,11 @@
+.box1-wstools { border:1px #217dc0 solid; }
+.box1-wstools .box1-top { background-color:#217dc0; color:#FFF; padding:5px 10px; font-size:20px; text-transform:uppercase; }
+.box1-wstools .box1-inhoud { padding:5px 10px; }
+.box1-wstools .box1-inhoud .naam { color:#217dc0; font-weight:bold; }
+.box1-wstools .box1-inhoud #ws-reviews { width:100% !important; overflow:hidden; margin-top:20px; }
+.box1-wstools .box1-inhoud #ws-reviews .itemreview .star { text-align:right; }
+.box1-wstools .box1-inhoud #ws-reviews .itemreview .star span { color:#217dc0; font-size:20px; position: inherit; margin-top:-10px; }
+.box1-wstools .box1-inhoud #ws-reviews .itemreview .star .sterren { float:left; color:#217dc0; margin-top:10px; }
+.box1-wstools .box1-inhoud #ws-reviews .itemreview .zin { font-weight:bold; float:none; display:block; clear:both; }
+.box1-wstools .box1-bottom { margin-top:20px; background-color:#217dc0; color:#FFF; padding:5px 10px; text-align:right; }
+.box1-wstools .box1-bottom img { height:25px; }
