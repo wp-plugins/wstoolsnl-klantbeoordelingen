@@ -48,10 +48,10 @@ class WStools_klantbeoordelingen extends WP_Widget
 	if($soort == "Box 1") {
 		$linkbox1 = file_get_contents("http://beoordelingen.wstools.nl/give/".$host."/klantbeoordelingen-box01-link");
 		$bron = file_get_contents($linkbox1."&wp=TRUE&check=".urlencode(str_replace("/","|",$_SERVER['REQUEST_URI'])));
-		$bron = str_replace("{wppluginroot}",plugin_dir_url().'WStools-klantbeoordelingen/',$bron);
+		$bron = str_replace("{wppluginroot}",plugin_dir_url().'wstoolsnl-klantbeoordelingen/',$bron);
 		if ($bron != "") {
 		wp_enqueue_script('WSKlant', 'http://beoordelingen.wstools.nl/js/WS-klantbeoordelingen.js');
-		wp_enqueue_style('WSKlantcss', plugin_dir_url().'WStools-klantbeoordelingen/css/WStools-box1.css');
+		wp_enqueue_style('WSKlantcss', plugin_dir_url().'wstoolsnl-klantbeoordelingen/css/WStools-box1.css');
 		?>
         <div class="box-ws-in"><?php echo $bron; ?></div>
         <?php
@@ -61,13 +61,13 @@ class WStools_klantbeoordelingen extends WP_Widget
 		$linkbox2 = file_get_contents("http://beoordelingen.wstools.nl/give/".$host."/klantbeoordelingen-box02-link");
 		$linkbox2a = file_get_contents("http://beoordelingen.wstools.nl/give/".$host."/klantbeoordelingen-box02-linka");
 		if ($linkbox2 != "") {
-			wp_enqueue_style('WSKlant', plugin_dir_url().'WStools-klantbeoordelingen/css/WStools-box2.css');
+			wp_enqueue_style('WSKlant', plugin_dir_url().'wstoolsnl-klantbeoordelingen/css/WStools-box2.css');
 		?>
         <div class="box2-wstools">
         	<div class="box2-top">klantbeoordelingen</div>
     		<iframe src="<?php echo $linkbox2; ?>" scrolling="no" width="100%" frameborder="0" /></iframe>
             <div class="box2-bottom">
-                <div class="WStools-inc"><a href="<?php echo $linkbox2a; ?>" target="_blank" title="Gerealiseerd door WStools.nl"><img src="<?php echo plugin_dir_url().'WStools-klantbeoordelingen/'; ?>images/wstools-fullwit.png" alt="WStools" /></a></div>
+                <div class="WStools-inc"><a href="<?php echo $linkbox2a; ?>" target="_blank" title="Gerealiseerd door WStools.nl"><img src="<?php echo plugin_dir_url().'wstoolsnl-klantbeoordelingen/'; ?>images/wstools-fullwit.png" alt="WStools" /></a></div>
             </div>
         </div>                
         <?php
@@ -83,13 +83,13 @@ add_action( 'widgets_init', create_function('', 'return register_widget("WStools
 function WStools_klantbeoordeling_iframe(){
 	$host = $_SERVER['HTTP_HOST'];
 	$iframecode = file_get_contents("http://beoordelingen.wstools.nl/give/".$host."/klantbeoordelingen-iframe");
-	wp_enqueue_script('WSFrame', plugin_dir_url().'WStools-klantbeoordelingen/js/WS-Frame.js');
+	wp_enqueue_script('WSFrame', plugin_dir_url().'wstoolsnl-klantbeoordelingen/js/WS-Frame.js');
 	?>
 	<iframe src="<?php echo $iframecode; ?>" id="WStools-kframe" scrolling="no" width="100%" height="200px" frameborder="0" onload="FrameManager.registerFrame(this)" /></iframe>
     <?php
 }
 
 
-add_shortcode( 'WStools-klantbeoordelingen', 'WStools_klantbeoordeling_iframe' );
+add_shortcode( 'wstoolsnl-klantbeoordelingen', 'WStools_klantbeoordeling_iframe' );
 
 ?>
