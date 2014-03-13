@@ -80,16 +80,16 @@ add_action( 'widgets_init', create_function('', 'return register_widget("WStools
 
 
 
-function WStools_klantbeoordeling_iframe(){
-	$host = $_SERVER['HTTP_HOST'];
-	$iframecode = file_get_contents("http://beoordelingen.wstools.nl/give/".$host."/klantbeoordelingen-iframe");
-	wp_enqueue_script('WSFrame', plugin_dir_url().'wstoolsnl-klantbeoordelingen/js/WS-Frame.js');
-	?>
-	<iframe src="<?php echo $iframecode; ?>" id="WStools-kframe" scrolling="no" width="100%" height="200px" frameborder="0" onload="FrameManager.registerFrame(this)" /></iframe>
-    <?php
+function WStools_klantbeoordeling_iframe($text){	
+	if (preg_match("/WStools-klantbeoordelingen/i", $text)) {
+		$host = $_SERVER['HTTP_HOST'];
+		$iframecode = file_get_contents("http://beoordelingen.wstools.nl/give/".$host."/klantbeoordelingen-iframe");
+		wp_enqueue_script('WSFrame', plugin_dir_url().'wstoolsnl-klantbeoordelingen/js/WS-Frame.js');
+		$text = str_replace('[WStools-klantbeoordelingen]','<iframe src="'.$iframecode.'" id="WStools-kframe" scrolling="no" width="100%" height="200px" frameborder="0" onload="FrameManager.registerFrame(this)" /></iframe>',$text);
+	}
+	return $text;
 }
 
-
-add_shortcode( 'wstoolsnl-klantbeoordelingen', 'WStools_klantbeoordeling_iframe' );
+add_filter('the_content', 'WStools_klantbeoordeling_iframe' );
 
 ?>
