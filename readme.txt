@@ -2,7 +2,7 @@
 Plugin Name: WStools.nl - Klantbeoordelingen
 Plugin URI: http://wstools.nl/
 Description: Geef bezoekers de mogelijkheid om uw bedrijf/webshop te beoordelen
-Version: 1.1
+Version: 1.2
 Author: WStools.nl
 Author URI: http://wstools.nl/
 
