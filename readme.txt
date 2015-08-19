@@ -10,7 +10,7 @@ Contributors: WStools
 Donate link: http://wstools.nl/
 Tags: website, klantbeoordelingen, klanten reviews, klanten feedback, 
 Requires at least: 3.0.1
-Tested up to: 3.9
+Tested up to: 4.3
 Stable tag: 4.3
 
 Geef bezoekers de mogelijkheid om uw bedrijf/webshop te beoordelen met de klantbeoordeling plugin van WStools.nl
